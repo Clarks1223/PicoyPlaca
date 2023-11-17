@@ -33,10 +33,49 @@
   }
 }
 
-.card {
-  padding: 2em;
+.mainForm{
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+  margin: 30px;
+  flex-direction: column;
 }
 
-.read-the-docs {
-  color: #888;
+.grid-time{
+  display: grid;
+  gap: 5px;
+  grid-template:
+  "time time"
+  "initial final" 
+  "input1 input2";
+}
+
+.title-section{
+  grid-area: time;
+}
+
+.initial{
+  grid-area: initial;
+}
+.final{
+  grid-area: final;
+}
+
+.initial-input{
+  grid-area: input1;
+}
+
+.final-input{
+  grid-area: input2;
+}
+
+.answere{
+  grid-area: footer;
+    margin: 3px solid black;
+    background-color: white;
+    color: black;
+}
+.closeSection{
+  background-color: black;
+  color: red;
 }

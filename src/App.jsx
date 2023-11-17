@@ -1,35 +1,90 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import Information from "./Components/InformationPlate";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [form, setForm] = useState({
+    plate: "",
+    date: "",
+    timeInitial: "",
+    timeFinal: "",
+  });
+
+  const [activo, setActivo] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setActivo(true);
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <header className="title">
+        <h1>Welcome to "Pico y Placa" Predictor</h1>
+      </header>
+      <section className="grid-container">
+        <form onSubmit={handleSubmit} className="mainForm">
+          <label htmlFor="plate">License plate number:</label>
+          <input
+            id="plate"
+            type="text"
+            name="plate"
+            value={form.plate}
+            onChange={handleChange}
+            placeholder="EXM-1234"
+            maxLength={8}
+          />
+          <label htmlFor="date">Date:</label>
+          <input
+            id="date"
+            type="date"
+            name="date"
+            value={form.date}
+            onChange={handleChange}
+            max={`2023-12-31`}
+            min={`2023-01-01`}
+          />
+          <section className="grid-time">
+            <h3 className="title-section">Time</h3>
+
+            <label htmlFor="timeInitial" className="initial">
+              Initial
+            </label>
+            <input
+              id="timeInitial"
+              type="time"
+              name="timeInitial"
+              value={form.timeInitial}
+              onChange={handleChange}
+              className="initial-input"
+            ></input>
+            <label htmlFor="timeInitial" className="final">
+              Final
+            </label>
+            <input
+              id="timeFinal"
+              type="time"
+              name="timeFinal"
+              value={form.timeFinal}
+              onChange={handleChange}
+              className="initial-final"
+            ></input>
+          </section>
+
+          <input type="submit" value="Search" />
+        </form>
+
+        <footer className="answere">
+          {activo && <Information form={form} />}
+        </footer>
+      </section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
