@@ -1,16 +1,15 @@
+import "../Stylesheet/InformationStyles.css";
 const Information = ({ formData }) => {
   if (!formData || !formData.plate || !formData.date || !formData.time) {
-    return <p>Los datos del formulario no están definidos.</p>;
+    return <p>The form data is not defined..</p>;
   }
 
   // Get the last digit of the plate
   const numberPlate = formData.plate.substring(formData.plate.length - 1);
-  console.log(numberPlate);
 
   const canRoad = () => {
     // Get weekday
     const day = new Date(formData.date).getDay();
-    console.log(day);
 
     // Get hours and minutes
     const [hour, minutes] = formData.time
@@ -53,22 +52,22 @@ const Information = ({ formData }) => {
 
   return (
     <>
-      <section>
+      <section className="Information">
         <h3>License plate number: {formData.plate}</h3>
         <h3>Date: {formData.date}</h3>
         <h3>Time: {formData.time}</h3>
         <h3>Last digit of plate: {numberPlate}</h3>
         <h3>Day: {weekDay}</h3>
-        <p>
-          {canRoad()
-            ? "Be careful, you cannot road at this moment."
-            : "You're ready to hit the road. Wishing you an incredible journey!"}
-        </p>
-        <p>
-          {weekDay == "Saturday" || weekDay == "Sunday"
-            ? "Remember that the PICO y PLACA doesn't work on the weekend"
-            : "Schedule: 6:00 to 9:30 and 14:00 to 20:00"}
-        </p>
+          <h4>
+            {canRoad()
+              ? "Be careful, you cannot road at this moment."
+              : "You're ready to hit the road. Wishing you an incredible journey!"}
+          </h4>
+          <h4>
+            {weekDay == "Saturday" || weekDay == "Sunday"
+              ? "Remember that the PICO y PLACA doesn't work on the weekend"
+              : "Schedule: 6:00 to 9:30 and 14:00 to 20:00"}
+          </h4>
       </section>
     </>
   );

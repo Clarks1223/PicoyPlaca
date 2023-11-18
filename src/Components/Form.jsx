@@ -10,9 +10,15 @@ export const Form = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     setDatosFormulario(data);
   };
+
+  const handlePlateChange = (e) => {
+    e.target.value = e.target.value.toUpperCase();
+  };
+
+  //get courrent year
+  const year = new Date().getFullYear();
 
   return (
     <>
@@ -22,31 +28,30 @@ export const Form = () => {
           id="plate"
           type="text"
           name="plate"
-          placeholder="ABC-1234"
+          placeholder="ABC-0123"
           maxLength="8"
           {...register("plate", {
             required: true,
             pattern: /^[A-Z]{3}-\d{3,4}$/,
           })}
+          onChange={handlePlateChange} // Agregar el evento onChange
         />
         {errors.plate?.type === "required" && <p>Required</p>}
         {errors.plate?.type === "pattern" && (
-          <p>this format is incorrect, EX: PBC-1234</p>
+          <p>This format is incorrect, EX: PBC-1234</p>
         )}
-
         <label htmlFor="date">Date:</label>
         <input
           id="date"
           type="date"
           name="date"
-          max={`2023-12-31`}
-          min={`2023-01-01`}
+          max={`${year}-12-31`}
+          min={`${year}-01-01`}
           {...register("date", {
             required: true,
           })}
         />
         {errors.date?.type === "required" && <p>Required</p>}
-
         <label htmlFor="time">Time:</label>
         <input
           id="time"
