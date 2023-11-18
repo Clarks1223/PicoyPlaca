@@ -4,9 +4,9 @@ based on:
 
 -Schedule: 
   Morning
-    06:00 to 09:30
+    07:00 to 09:30
   Afternoon
-    16:00 to 20:00
+    16:00 to 19:30
     
 -Day of the week.
 
