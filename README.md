@@ -26,7 +26,7 @@ Form:
 Answer:
 
 
-![image](https://github.com/Clarks1223/PicoyPlaca/assets/117754080/bc8664f3-a9ef-4bd5-a096-5a03f246c054)
+![image](https://github.com/Clarks1223/PicoyPlaca/assets/117754080/ef927800-a2bd-4773-a772-9d0f91a09b1e)
 
 
 Test on PageSpeed Insights:
