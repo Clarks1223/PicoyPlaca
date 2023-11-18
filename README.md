@@ -27,3 +27,22 @@ Answer:
 
 
 ![image](https://github.com/Clarks1223/PicoyPlaca/assets/117754080/e05bcb07-0841-46e8-8eef-be6aed6566a7)
+
+
+Test on PageSpeed Insights:
+Desktop
+
+
+![image](https://github.com/Clarks1223/PicoyPlaca/assets/117754080/c8df2242-b949-4f95-9366-d986c05b78ed)
+
+
+![image](https://github.com/Clarks1223/PicoyPlaca/assets/117754080/0d8e4a61-36c3-4d6f-8974-962746e33a3c)
+
+
+Mobile
+
+
+![image](https://github.com/Clarks1223/PicoyPlaca/assets/117754080/652ae6e3-9790-41e4-94dc-db479c8c8124)
+
+
+<img width="483" alt="image" src="https://github.com/Clarks1223/PicoyPlaca/assets/117754080/1fc854e1-5ef3-43b6-b5a9-e4d7f49287ce">
