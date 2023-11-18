@@ -15,9 +15,10 @@ const Information = ({ formData }) => {
 
     // Condition for circulation time
     const validTime =
-      (hour >= 6 && hour < 9) ||
-      (hour === 9 && minutes < 30) ||
-      (hour >= 16 && hour < 20);
+      (hour >= 7 && hour < 9) ||
+      (hour == 9 && minutes < 30) ||
+      (hour >= 16 && hour < 19)||
+      (hour == 19 && minutes<30);
 
     switch (day) {
       case 0:
@@ -63,7 +64,7 @@ const Information = ({ formData }) => {
           <h4>
             {weekDay == "Saturday" || weekDay == "Sunday"
               ? "Remember that the PICO y PLACA doesn't work on the weekend"
-              : "Schedule: 6:00 to 9:30 and 14:00 to 20:00"}
+              : "Schedule: 7:00 to 9:30 and 16:00 to 19:30"}
           </h4>
       </section>
     </>
