@@ -22,14 +22,14 @@ export const Form = () => {
           id="plate"
           type="text"
           name="plate"
-          placeholder="EXM-1234"
+          placeholder="ABC-1234"
           maxLength="8"
           {...register("plate", {
             required: true,
             pattern: /^[A-Z]{3}-\d{3,4}$/,
           })}
         />
-        {errors.plate?.type === "required" && <p>required</p>}
+        {errors.plate?.type === "required" && <p>Required</p>}
         {errors.plate?.type === "pattern" && (
           <p>this format is incorrect, EX: PBC-1234</p>
         )}
@@ -45,7 +45,7 @@ export const Form = () => {
             required: true,
           })}
         />
-        {errors.date?.type === "required" && <p>required</p>}
+        {errors.date?.type === "required" && <p>Required</p>}
 
         <label htmlFor="time">Time:</label>
         <input
@@ -56,7 +56,7 @@ export const Form = () => {
             required: true,
           })}
         />
-        {errors.time?.type === "required" && <p>required</p>}
+        {errors.time?.type === "required" && <p>Required</p>}
         <input type="submit" value="Search" />
       </form>
 

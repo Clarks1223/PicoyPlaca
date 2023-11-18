@@ -1,4 +1,3 @@
-import Information from "./Components/InformationPlate";
 import Form from "./Components/Form";
 import "./App.css";
 function App() {
@@ -8,7 +7,6 @@ function App() {
         <h1>Welcome to "Pico y Placa" Predictor</h1>
       </header>
       <Form />
-      
     </>
   );
 }
