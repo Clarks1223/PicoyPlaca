@@ -1,8 +1,5 @@
 import "../Stylesheet/InformationStyles.css";
 const Information = ({ formData }) => {
-  if (!formData || !formData.plate || !formData.date || !formData.time) {
-    return <p>The form data is not defined..</p>;
-  }
 
   // Get the last digit of the plate
   const numberPlate = formData.plate.substring(formData.plate.length - 1);

@@ -3,16 +3,17 @@ import { useState } from "react";
 import Information from "./InformationPlate";
 export const Form = () => {
   const [datosFormulario, setDatosFormulario] = useState(null);
+  //Desctructuring values
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
-
+  //to submit the form
   const onSubmit = (data) => {
     setDatosFormulario(data);
   };
-
+  //for capital letters
   const handlePlateChange = (e) => {
     e.target.value = e.target.value.toUpperCase();
   };
@@ -34,7 +35,7 @@ export const Form = () => {
             required: true,
             pattern: /^[A-Z]{3}-\d{3,4}$/,
           })}
-          onChange={handlePlateChange} // Agregar el evento onChange
+          onChange={handlePlateChange}
         />
         {errors.plate?.type === "required" && <p>Required</p>}
         {errors.plate?.type === "pattern" && (
