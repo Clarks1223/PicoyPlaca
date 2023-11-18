@@ -12,6 +12,10 @@ based on:
 
 -Number of the plate.
 
+
+Deploy link: https://picoyplacapredictor.netlify.app/
+
+
 EX:
 Form:
 
